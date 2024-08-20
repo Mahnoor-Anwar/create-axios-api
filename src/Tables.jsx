@@ -5,8 +5,32 @@ import {
 import './App.css'
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 export default function Tables({userdata}) {
+
+  const navigate = useNavigate()
+
+  const handleDelete = (id) =>{
+    console.log(id)
+    axios.delete('http://localhost:3000/users/' + id).then((res)=>{
+      Swal.fire({
+        title: 'Success!',
+        text: 'Data Deletd Sucessfully.',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      });
+    }).catch((err)=>{
+      Swal.fire({
+        title: 'Error!',
+        text: 'Something went wrong.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
+    })
+  }
   return (
     <>
     <Typography variant="h3" my={2} ml={2}>Users List</Typography>
@@ -29,8 +53,8 @@ export default function Tables({userdata}) {
               <TableCell className="table-body-cell">{e.username}</TableCell>
               <TableCell className="table-body-cell">{e.phone}</TableCell>
               <TableCell className="table-body-cell">
-              <DeleteIcon sx={{paddingRight:3,color:'red'}}/>
-                <EditIcon sx={{color:'blue'}}/>
+              <DeleteIcon onClick={()=>{handleDelete(e.id)}} sx={{paddingRight:3,color:'red'}}/>
+                <EditIcon onClick={()=>navigate(`/edit/${e.id}`)} sx={{color:'blue'}}/>
               </TableCell>
             </TableRow>
           ))}

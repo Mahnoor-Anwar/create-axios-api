@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 1,
-      "name": "Mrs. Dennis Schulist",
+      "name": "Mrs. Dennis updated",
       "username": "Leopoldo_Corkery",
       "email": "Karley_Dach@jasper.info",
       "phone": "1-477-935-8478 x6430",
@@ -26,9 +26,9 @@
     },
     {
       "id": 4,
-      "name": "Glenna Reichert",
+      "name": "Glenna Reichert uopatedd",
       "username": "Delphine",
-      "email": "Chaim_McDermott@dana.io",
+      "email": "Chaimbnbnbn232323",
       "phone": "(775)976-6794 x41206",
       "website": "conrad.com"
     },
@@ -88,6 +88,20 @@
       "username": "mahaa",
       "phone": "343434",
       "id": 12
+    },
+    {
+      "name": "warda",
+      "email": "warda@gmail.com",
+      "username": "waardaa",
+      "phone": "12",
+      "id": 13
+    },
+    {
+      "name": "warda",
+      "email": "warda@gmail.com",
+      "username": "waardaa",
+      "phone": "12",
+      "id": 14
     }
   ]
 }
